@@ -1,0 +1,29 @@
+TABLE users (
+    id SERIAL PRIMARY KEY,
+    email TEXT NOT NULL UNIQUE,
+    password_hash TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+
+TABLE projects (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    name TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+
+TABLE images (
+    id SERIAL PRIMARY KEY,
+    project_id INTEGER REFERENCES projects(id),
+    image_url TEXT,
+    upload_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+
+TABLE design_elements (
+    id SERIAL PRIMARY KEY,
+    image_id INTEGER REFERENCES images(id),
+    element_type TEXT,
+    color TEXT,
+    position_data JSONB,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
