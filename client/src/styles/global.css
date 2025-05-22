@@ -1,5 +1,67 @@
-body {
-    font-family: 'Courier New', Courier, monospace;
+
+/* Global Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Body Styles */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container Style */
+.app-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+    background: #0077ff;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #005edb;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* Upload Section Example */
+.upload-section {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.upload-section input[type="file"] {
+    margin-top: 1rem;
 }
